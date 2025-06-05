@@ -12,6 +12,21 @@ A comprehensive financial analysis app for Shopify stores that provides detailed
 - Units sold tracking by product
 - Beautiful data visualizations
 
+## Tech Stack
+
+- Frontend:
+  - React.js with TypeScript
+  - Shopify Polaris components
+  - Chart.js for visualizations
+- Backend:
+  - Node.js with Express
+  - MongoDB for data storage
+  - Shopify API integration
+- Development Tools:
+  - Cursor IDE for development
+  - Git for version control
+  - GitHub for repository hosting
+
 ## Prerequisites
 
 - Node.js (v14 or higher)
