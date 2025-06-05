@@ -1,0 +1,27 @@
+{
+  "name": "nest-finance-calculator",
+  "version": "1.0.0",
+  "main": "web/index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "shopify": "shopify",
+    "build": "shopify app build",
+    "dev": "cross-env PORT=5714 shopify app dev",
+    "info": "shopify app info",
+    "generate": "shopify app generate",
+    "deploy": "shopify app deploy",
+    "serve": "node web/index.js"
+  },
+  "dependencies": {
+    "@shopify/app": "3.55.3",
+    "@shopify/cli": "3.55.3",
+    "cross-env": "^7.0.3"
+  },
+  "author": "flippytech",
+  "private": true,
+  "workspaces": [
+    "web",
+    "web/frontend",
+    "extensions/*"
+  ]
+}

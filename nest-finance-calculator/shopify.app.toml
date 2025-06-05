@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "c0a04c94fc7ebeba911fbd434da8bd4d"
+name = "Nest Finance Calculator"
+handle = "nest-finance-calculator"
+application_url = "https://punch-combat-reducing-preparation.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "nest-calc-test.myshopify.com"
+include_config_on_deploy = true
+
+[webhooks]
+api_version = "2025-04"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,read_orders,write_orders,read_customers,write_customers,read_inventory,write_inventory"
+
+[auth]
+redirect_urls = [
+  "https://punch-combat-reducing-preparation.trycloudflare.com/auth/callback",
+  "https://punch-combat-reducing-preparation.trycloudflare.com/auth/shopify/callback",
+  "https://punch-combat-reducing-preparation.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false

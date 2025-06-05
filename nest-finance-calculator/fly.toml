@@ -1,0 +1,52 @@
+app = "nest-calc-app"
+primary_region = "sjc"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "5714"
+  HOST = "0.0.0.0"
+  NODE_ENV = "production"
+  SHOPIFY_API_KEY = "c0a04c94fc7ebeba911fbd434da8bd4d"
+  SHOPIFY_API_SECRET = "fe4c11b92951b8e3c284d74850fe51b4"
+
+[http_service]
+  internal_port = 5714
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+  [[http_service.ports]]
+    port = 5714
+    handlers = ["http"]
+
+[[services]]
+  internal_port = 5714
+  protocol = "tcp"
+  
+  [[services.ports]]
+    port = 5714
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024
+  min_machines_running = 1
+  max_machines_count = 1
+
+[deploy]
+  strategy = "immediate"
+
+[checks]
+  [checks.status]
+    port = 5714
+    type = "http"
+    interval = "10s"
+    timeout = "2s"
+    grace_period = "30s"
+    method = "GET"
+    path = "/health"
+    protocol = "http" 
