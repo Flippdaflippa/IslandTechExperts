@@ -1808,7 +1808,7 @@
                         </div>
                         <div class="product-metric">
                             <span>Net Profit</span>
-                            <span style="color: ${netProfit >= 0 ? '#10b981' : '#ef4444'}; font-weight: 600;">$${netProfit.toFixed(2)}</span>
+                            <span style="color: ${netProfit >= 0 ? '#10b981' : '#ef4444'}; font-weight: 600;">$${(isNaN(netProfit) || !isFinite(netProfit)) ? '0.00' : netProfit.toFixed(2)}</span>
                         </div>
                     </div>
                     
@@ -1824,7 +1824,7 @@
                         </div>
                         <div class="product-metric">
                             <span>Revenue After Losses</span>
-                            <span style="color: #1e293b; font-weight: 600;">$${revenueAfterLosses.toFixed(2)}</span>
+                            <span style="color: #1e293b; font-weight: 600;">$${(isNaN(revenueAfterLosses) || !isFinite(revenueAfterLosses)) ? '0.00' : revenueAfterLosses.toFixed(2)}</span>
                         </div>
                         <div class="product-metric">
                             <span>Gross Profit</span>
@@ -1844,7 +1844,7 @@
                                         <option value="dollar" ${types.usTax === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.usTaxAmount.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.usTaxAmount) || !isFinite(metrics.usTaxAmount)) ? '0.00' : metrics.usTaxAmount.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -1860,7 +1860,7 @@
                                         <option value="dollar" ${types.bahamasTax === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.bahamasTaxAmount.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.bahamasTaxAmount) || !isFinite(metrics.bahamasTaxAmount)) ? '0.00' : metrics.bahamasTaxAmount.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -1877,7 +1877,7 @@
                                         <option value="dollar" ${types.customsRate === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.usCustoms.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.usCustoms) || !isFinite(metrics.usCustoms)) ? '0.00' : metrics.usCustoms.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -1893,7 +1893,7 @@
                                         <option value="dollar" ${types.bahamasCustoms === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.bahamasCustoms.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.bahamasCustoms) || !isFinite(metrics.bahamasCustoms)) ? '0.00' : metrics.bahamasCustoms.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -1909,7 +1909,7 @@
                                         <option value="dollar" ${types.bahamasEnvironmentalDuty === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.bahamasEnvironmentalDuty.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.bahamasEnvironmentalDuty) || !isFinite(metrics.bahamasEnvironmentalDuty)) ? '0.00' : metrics.bahamasEnvironmentalDuty.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -1926,7 +1926,7 @@
                                         <option value="dollar" ${types.warehouseFeeRate === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.warehouseFee.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.warehouseFee) || !isFinite(metrics.warehouseFee)) ? '0.00' : metrics.warehouseFee.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -1942,7 +1942,7 @@
                                         <option value="dollar" ${types.warehouseReceiverFee === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.warehouseReceiverFee.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.warehouseReceiverFee) || !isFinite(metrics.warehouseReceiverFee)) ? '0.00' : metrics.warehouseReceiverFee.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -1958,7 +1958,7 @@
                                         <option value="dollar" ${types.brokerFees === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.brokerFees.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.brokerFees) || !isFinite(metrics.brokerFees)) ? '0.00' : metrics.brokerFees.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -1974,7 +1974,7 @@
                                         <option value="dollar" ${types.buyersClubFee === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.buyersClubFee.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.buyersClubFee) || !isFinite(metrics.buyersClubFee)) ? '0.00' : metrics.buyersClubFee.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -1990,7 +1990,7 @@
                                         <option value="dollar" ${types.vendorSurcharge === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.vendorSurcharge.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.vendorSurcharge) || !isFinite(metrics.vendorSurcharge)) ? '0.00' : metrics.vendorSurcharge.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -2006,7 +2006,7 @@
                                         <option value="dollar" ${types.miscCharges === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.miscCharges.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.miscCharges) || !isFinite(metrics.miscCharges)) ? '0.00' : metrics.miscCharges.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -2023,7 +2023,7 @@
                                         <option value="dollar" ${types.oceanFreight === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.oceanFreight.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.oceanFreight) || !isFinite(metrics.oceanFreight)) ? '0.00' : metrics.oceanFreight.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -2039,7 +2039,7 @@
                                         <option value="dollar" ${types.usInlandFreight === 'dollar' ? 'selected' : ''}>$</option>
                                     </select>
                                 </div>
-                                <span class="metric-calculated-value">$${metrics.usInlandFreight.toFixed(2)}</span>
+                                <span class="metric-calculated-value">$${(isNaN(metrics.usInlandFreight) || !isFinite(metrics.usInlandFreight)) ? '0.00' : metrics.usInlandFreight.toFixed(2)}</span>
                             </div>
                         </div>
                         
@@ -2069,7 +2069,7 @@
                         <!-- Final Calculations -->
                         <div class="product-metric">
                             <span>Final Profit</span>
-                            <span style="color: ${finalProfit >= 0 ? '#10b981' : '#ef4444'}; font-weight: 700; font-size: 14px;">$${finalProfit.toFixed(2)}</span>
+                            <span style="color: ${finalProfit >= 0 ? '#10b981' : '#ef4444'}; font-weight: 700; font-size: 14px;">$${(isNaN(finalProfit) || !isFinite(finalProfit)) ? '0.00' : finalProfit.toFixed(2)}</span>
                         </div>
                     </div>
                     
@@ -3822,46 +3822,65 @@
                                 // Update with the new calculated value
                                 let calculatedValue = 0;
                                 switch(rateKey) {
-                                    case 'usTax': calculatedValue = metrics.usTaxAmount; break;
-                                    case 'bahamasTax': calculatedValue = metrics.bahamasTaxAmount; break;
-                                    case 'customsRate': calculatedValue = metrics.usCustoms; break;
-                                    case 'bahamasCustoms': calculatedValue = metrics.bahamasCustoms; break;
-                                    case 'bahamasEnvironmentalDuty': calculatedValue = metrics.bahamasEnvironmentalDuty; break;
-                                    case 'warehouseFeeRate': calculatedValue = metrics.warehouseFee; break;
-                                    case 'warehouseReceiverFee': calculatedValue = metrics.warehouseReceiverFee; break;
-                                    case 'brokerFees': calculatedValue = metrics.brokerFees; break;
-                                    case 'buyersClubFee': calculatedValue = metrics.buyersClubFee; break;
-                                    case 'vendorSurcharge': calculatedValue = metrics.vendorSurcharge; break;
-                                    case 'miscCharges': calculatedValue = metrics.miscCharges; break;
-                                    case 'oceanFreight': calculatedValue = metrics.oceanFreight; break;
-                                    case 'usInlandFreight': calculatedValue = metrics.usInlandFreight; break;
+                                    case 'usTax': calculatedValue = metrics.usTaxAmount || 0; break;
+                                    case 'bahamasTax': calculatedValue = metrics.bahamasTaxAmount || 0; break;
+                                    case 'customsRate': calculatedValue = metrics.usCustoms || 0; break;
+                                    case 'bahamasCustoms': calculatedValue = metrics.bahamasCustoms || 0; break;
+                                    case 'bahamasEnvironmentalDuty': calculatedValue = metrics.bahamasEnvironmentalDuty || 0; break;
+                                    case 'warehouseFeeRate': calculatedValue = metrics.warehouseFee || 0; break;
+                                    case 'warehouseReceiverFee': calculatedValue = metrics.warehouseReceiverFee || 0; break;
+                                    case 'brokerFees': calculatedValue = metrics.brokerFees || 0; break;
+                                    case 'buyersClubFee': calculatedValue = metrics.buyersClubFee || 0; break;
+                                    case 'vendorSurcharge': calculatedValue = metrics.vendorSurcharge || 0; break;
+                                    case 'miscCharges': calculatedValue = metrics.miscCharges || 0; break;
+                                    case 'oceanFreight': calculatedValue = metrics.oceanFreight || 0; break;
+                                    case 'usInlandFreight': calculatedValue = metrics.usInlandFreight || 0; break;
                                     case 'profitMarkup': 
-                                        calculatedSpan.textContent = value + (type === 'percentage' ? '%' : '$');
+                                        calculatedSpan.textContent = (parseFloat(value) || 0) + (type === 'percentage' ? '%' : '$');
                                         return;
                                 }
                                 
                                 if (rateKey !== 'profitMarkup') {
-                                    calculatedSpan.textContent = '$' + calculatedValue.toFixed(2);
+                                    // Use safe number formatting
+                                    const safeValue = Number(calculatedValue);
+                                    if (isNaN(safeValue) || !isFinite(safeValue)) {
+                                        calculatedSpan.textContent = '$0.00';
+                                    } else {
+                                        calculatedSpan.textContent = '$' + safeValue.toFixed(2);
+                                    }
                                 }
                             }
                         }
                     });
                     
-                    // Update other calculated fields
-                    const finalProfit = (product.grossProfit || 0) - metrics.totalExpenses;
-                    const revenueAfterLosses = (product.revenue || 0) - metrics.totalExpenses;
+                    // Update other calculated fields with safe calculations
+                    const safeGrossProfit = Number(product.grossProfit) || 0;
+                    const safeRevenue = Number(product.revenue) || 0;
+                    const safeTotalExpenses = Number(metrics.totalExpenses) || 0;
+                    
+                    const finalProfit = safeGrossProfit - safeTotalExpenses;
+                    const revenueAfterLosses = safeRevenue - safeTotalExpenses;
                     
                     // Update Revenue After Losses display
                     const revenueAfterLossesSpan = document.querySelector(`#detailed-${productId} .product-metric span:contains('Revenue After Losses') + span`);
                     if (revenueAfterLossesSpan) {
-                        revenueAfterLossesSpan.textContent = '$' + revenueAfterLosses.toFixed(2);
+                        if (isNaN(revenueAfterLosses) || !isFinite(revenueAfterLosses)) {
+                            revenueAfterLossesSpan.textContent = '$0.00';
+                        } else {
+                            revenueAfterLossesSpan.textContent = '$' + revenueAfterLosses.toFixed(2);
+                        }
                     }
                     
                     // Update Final Profit display
                     const finalProfitSpan = document.querySelector(`#detailed-${productId} .product-metric span:contains('Final Profit') + span`);
                     if (finalProfitSpan) {
-                        finalProfitSpan.textContent = '$' + finalProfit.toFixed(2);
-                        finalProfitSpan.style.color = finalProfit >= 0 ? '#10b981' : '#ef4444';
+                        if (isNaN(finalProfit) || !isFinite(finalProfit)) {
+                            finalProfitSpan.textContent = '$0.00';
+                            finalProfitSpan.style.color = '#64748b';
+                        } else {
+                            finalProfitSpan.textContent = '$' + finalProfit.toFixed(2);
+                            finalProfitSpan.style.color = finalProfit >= 0 ? '#10b981' : '#ef4444';
+                        }
                     }
                     
                     // Update suggested price if profit markup changed
@@ -3869,7 +3888,12 @@
                         const suggestedPrice = calculateSuggestedPrice(product);
                         const suggestedPriceSpan = document.querySelector(`.product-card .suggested-price-value`);
                         if (suggestedPriceSpan) {
-                            suggestedPriceSpan.textContent = '$' + suggestedPrice.toFixed(2);
+                            const safeSuggestedPrice = Number(suggestedPrice);
+                            if (isNaN(safeSuggestedPrice) || !isFinite(safeSuggestedPrice)) {
+                                suggestedPriceSpan.textContent = '$0.00';
+                            } else {
+                                suggestedPriceSpan.textContent = '$' + safeSuggestedPrice.toFixed(2);
+                            }
                         }
                     }
                 }
