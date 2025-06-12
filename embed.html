@@ -231,46 +231,101 @@
             min-width: 0;
         }
         
-        /* Inline editing styles */
-        .metric-with-inputs {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 6px;
-            width: 100%;
+        /* Enhanced inline editing styles with blue-magenta gradient */
+        .product-metrics-detailed {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 50%, #f3e8ff 100%);
+            border: 1px solid #a5b4fc;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 12px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
         }
+        
+        .metric-with-inputs {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.2s ease;
+        }
+        
+        .metric-with-inputs:hover {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+        }
+        
+        .metric-with-inputs span:first-child {
+            color: #1e40af;
+            font-weight: 600;
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
         .metric-inputs {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             flex-shrink: 0;
+            justify-self: center;
         }
+        
         .metric-input {
-            width: 45px;
-            padding: 2px 4px;
-            border: 1px solid #d1d5db;
-            border-radius: 3px;
-            font-size: 10px;
+            width: 55px;
+            padding: 6px 8px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
             text-align: center;
+            background: white;
+            transition: all 0.2s ease;
         }
+        
         .metric-input:focus {
             outline: none;
             border-color: #3b82f6;
-            box-shadow: 0 0 0 1px #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            background: #fefefe;
         }
+        
         .metric-type-select {
-            width: 30px;
-            padding: 1px 2px;
-            border: 1px solid #d1d5db;
-            border-radius: 3px;
-            font-size: 9px;
-            background: white;
-        }
-        .metric-calculated-value {
+            width: 40px;
+            padding: 6px 4px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 10px;
             font-weight: 600;
-            color: #1e293b;
-            min-width: 50px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .metric-type-select:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+        
+        .metric-calculated-value {
+            font-weight: 700;
+            color: #1e40af;
+            min-width: 65px;
             text-align: right;
+            font-size: 12px;
+            padding: 4px 8px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #faf5ff 100%);
+            border-radius: 6px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            justify-self: end;
         }
         .suggested-price {
             grid-column: 1 / -1;
@@ -333,26 +388,30 @@
         }
         
         .toggle-metrics-btn {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            color: #475569;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 6px 12px;
-            font-size: 11px;
-            font-weight: 600;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 12px;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.3s ease;
             margin-bottom: 12px;
             width: 100%;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .toggle-metrics-btn:hover {
-            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-            transform: translateY(-1px);
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
         }
         .toggle-metrics-btn.expanded {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            color: #1e40af;
-            border-color: #93c5fd;
+            background: linear-gradient(135deg, #1e40af 0%, #6d28d9 100%);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+            transform: translateY(0);
         }
         .product-metrics.collapsed::after {
             content: '';
@@ -376,7 +435,7 @@
         .product-metrics-detailed {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
             margin-bottom: 16px;
             margin-top: 12px;
         }
@@ -1832,6 +1891,9 @@
                         </div>
                         
                         <!-- Tax Breakdown with Inline Editing -->
+                        <div style="margin: 16px 0 12px 0; padding: 8px 12px; background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%); color: white; border-radius: 8px; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">
+                            💰 Tax Settings
+                        </div>
                         <div class="product-metric">
                             <div class="metric-with-inputs">
                                 <span>US Tax</span>
@@ -1865,6 +1927,9 @@
                         </div>
                         
                         <!-- Duty Breakdown with Inline Editing -->
+                        <div style="margin: 16px 0 12px 0; padding: 8px 12px; background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%); color: white; border-radius: 8px; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">
+                            🏛️ Customs & Duties
+                        </div>
                         <div class="product-metric">
                             <div class="metric-with-inputs">
                                 <span>US Customs</span>
@@ -1914,6 +1979,9 @@
                         </div>
                         
                         <!-- Fee Breakdown with Inline Editing -->
+                        <div style="margin: 16px 0 12px 0; padding: 8px 12px; background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%); color: white; border-radius: 8px; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">
+                            💼 Fees & Charges
+                        </div>
                         <div class="product-metric">
                             <div class="metric-with-inputs">
                                 <span>Warehouse Fee</span>
@@ -2011,6 +2079,9 @@
                         </div>
                         
                         <!-- Freight Breakdown with Inline Editing -->
+                        <div style="margin: 16px 0 12px 0; padding: 8px 12px; background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); color: white; border-radius: 8px; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">
+                            🚛 Freight & Shipping
+                        </div>
                         <div class="product-metric">
                             <div class="metric-with-inputs">
                                 <span>Ocean Freight</span>
@@ -2044,9 +2115,12 @@
                         </div>
                         
                         <!-- Profit Markup with Inline Editing -->
-                        <div class="product-metric" style="background: linear-gradient(135deg, #fef3c7 0%, #d1fae5 100%); border: 1px solid #10b981;">
+                        <div style="margin: 16px 0 12px 0; padding: 8px 12px; background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; border-radius: 8px; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">
+                            💎 Profit Markup
+                        </div>
+                        <div class="product-metric" style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%); border: 2px solid #10b981;">
                             <div class="metric-with-inputs">
-                                <span>💎 Profit Markup</span>
+                                <span style="color: #059669; font-weight: 700;">💎 Profit Markup</span>
                                 <div class="metric-inputs">
                                     <input type="number" class="metric-input" value="${rates.profitMarkup || 0}" step="0.01" min="0" 
                                            onchange="updateProductRate('${product.id}', 'profitMarkup', this.value, document.getElementById('profitMarkup-type-${product.id}').value)">
@@ -3898,10 +3972,26 @@
                     }
                 }
                 
-                // Refresh overall calculations
-                refreshAllData();
+                // Refresh overall calculations and update dashboard
+                setTimeout(() => {
+                    refreshAllData();
+                    
+                    // Force update of overall metrics sections
+                    if (typeof updateOverallMetrics === 'function') {
+                        updateOverallMetrics();
+                    }
+                    
+                    // Update summary cards if they exist
+                    const summaryCards = document.querySelectorAll('.summary-card');
+                    if (summaryCards.length > 0) {
+                        loadFinancialData();
+                    }
+                }, 100);
                 
                 console.log(`✅ Updated ${rateKey} for product ${productId}: ${value}${type === 'percentage' ? '%' : '$'}`);
+                
+                // Show success notification
+                showNotification(`${rateKey.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())} updated successfully!`, 'success');
                 
             } catch (error) {
                 console.error('❌ Error updating product rate:', error);
